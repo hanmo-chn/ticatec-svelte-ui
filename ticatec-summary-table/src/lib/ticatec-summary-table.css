@@ -1,0 +1,129 @@
+:root {
+    --ticatec-summary-table-background-color: #ffffff;
+    --ticatec-summary-table-header-background-color: #BBDEFB;
+    --ticatec-alter-row-background-color: #FFFFE1;
+    --ticatec-bar-bottom-border-color: #e1e1e1;
+
+}
+
+.ticatec-summary-table {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: var(--ticatec-summary-table-background-color, #ffffff);
+}
+
+.summary-table-header-wrapper {
+    width: 100%;
+    height: 28px;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: var(--ticatec-summary-table-header-background-color);
+}
+
+.summary-table-header {
+    position: relative;
+}
+
+.summary-table-fixed-col-wrapper, .summary-table-indicator-col-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.summary-table-fixed-col-wrapper {
+    left: 0;
+}
+
+.summary-table-indicator-col-wrapper {
+    right: 0;
+}
+
+.summary-table-fixed-col, .summary-table-indicator-col {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ticatec-summary-table-background-color);
+    overflow: hidden;
+    text-align: center;
+}
+
+.summary-table-fixed-rows, .summary-table-indicator-rows {
+    position: relative;
+}
+
+.summary-table-indicator-rows img {
+    position: relative;
+    top: 4px;
+}
+
+.summary-table-indicator-rows img:hover {
+    background-color: #0288D1;
+    border-radius: 50%;
+}
+
+.summary-table-indicator-rows img:active {
+    top: 5px;
+}
+
+.ticatec-summary-table table {
+    border-spacing: 0;
+}
+
+.summary-table-data {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: relative;
+    overflow: auto;
+}
+
+.summary-col {
+    position: relative;
+    padding: 0 4px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.summary-col.alternative, .summary-table-fixed-rows .alternative, .summary-table-indicator-rows .alternative {
+    background-color: var(--ticatec-alter-row-background-color)
+}
+
+.summary-table-fixed-rows>div {
+    text-align: center;
+}
+
+.summary-col>span{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+
+}
+
+.summary-table-header-wrapper th {
+    background-color: var(--ticatec-summary-table-header-background-color);
+}
+
+th {
+    text-align: center;
+    font-weight: 600;
+}
+
+.load-more {
+    flex-shrink: 0;
+    flex-grow: 0;
+    text-align: center;
+    background-color: white;
+    z-index: 2;
+    padding: 4px 0;
+    width: 100%;
+    cursor: pointer
+}

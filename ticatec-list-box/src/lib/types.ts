@@ -1,0 +1,1 @@
+export type FunFilter = (item: any) => boolean;
