@@ -1,0 +1,35 @@
+.tsui-form-container {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  .tsui-form-row {
+    position: relative;
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+
+    .tsui-form-col {
+      display: block;
+      position: relative;
+      box-sizing: border-box;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      @for $i from 1 through 12 {
+        &.span-#{$i} {
+          width: (100% / 12 * $i);
+        }
+      }
+    }
+  }
+
+
+}

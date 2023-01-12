@@ -1,0 +1,21 @@
+:root {
+  --tsui-app-background-color: #ffffff;
+  --tsui-app-primary-color: #333333;
+  --tsui-border-color: #e0e0e0;
+  --tsui-primary-font-stack: Helvetica, sans-serif;
+  --tsui-primary-font-size: 12px;
+  --tsui-pagination-background-color: #ffffff;
+  --tsui-pagination-selected-background-color: #303f9f;
+  --tsui-pagination-hover-background-color: #ffffe0;
+  --tsui-toast-warning-background-color: #ff3e00;
+  --tsui-toast-info-background-color: #303f9f;
+  --tsui-toast-font-color: #ffffff;
+  --tsui-box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  --tsui-dialog-background-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --tsui-app-background-color: #333333;
+  --tsui-app-primary-color: #ffffff;
+  --tsui-border-color: #f0f0f0;
+}

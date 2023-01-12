@@ -1,0 +1,15 @@
+.tsui-drawer-wrapper {
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: var(--tsui-app-background-color, #ffffff);
+  left: 0;
+  border-right: 1px solid var(--tsui-border-color, #9d9d9d);
+
+  &.right-side {
+    right: 0;
+    border-left: 1px solid var(--tsui-border-color, #9d9d9d);
+  }
+}

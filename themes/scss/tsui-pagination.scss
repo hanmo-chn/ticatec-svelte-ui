@@ -1,0 +1,52 @@
+.tsui-pagination-panel {
+
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+
+  &.align-left {
+    text-align: left;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+
+  .tsui-page-no {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      border-radius: 50%;
+      border: 1px solid #e1e1e1;
+      cursor: pointer;
+    }
+    
+    &:hover {
+      background-color: var(--tsui-pagination-hover-background-color);
+    }
+
+    &:active {
+      top: 1px;
+      background-color: var(--tsui-pagination-selected-background-color);
+    }
+
+    &.selected {
+      background-color: var(--tsui-pagination-selected-background-color);
+    }
+
+  }
+
+
+}
