@@ -86,6 +86,6 @@
     ];//];/**/
 </script>
 
-<TicatecSummaryTable style="width: 100%; font-size: 14px" {columns} {list} hasMore={true} on:chevronClick={(e)=>{console.log(e.detail)}} on:loadMore={()=>{console.log('load more data')}}>
+<TicatecSummaryTable style="width: 100%; font-size: 12px" {columns} {list} hasMore={true} on:chevronClick={(e)=>{console.log(e.detail)}} on:loadMore={()=>{console.log('load more data')}}>
 
 </TicatecSummaryTable>

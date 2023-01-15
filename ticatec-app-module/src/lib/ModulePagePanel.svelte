@@ -4,7 +4,8 @@
     import {SvelteComponent} from "svelte";
     import type DialogEntry from "./page-dialog/DialogEntry";
     import ModuleDialog from "./page-dialog/ModuleDialog.svelte";
-    import ModulePagePanel from "./ModulePagePanel.svelte";
+    import {fade} from "svelte/transition";
+    import ModulePage from "./ModulePage.svelte";
 
     let className: string = '';
     export {className as class };
@@ -89,11 +90,7 @@
 
     {#if pages && pages.length > 0}
         {#each pages as page, i}
-            <div class="tsui-stack-page-board" style="{i===pages.length ? 'background-color: #ffffff00' : ''}">
-                <div>
-                    <svelte:component this={page.component} {pageBoard} {...page.props}/>
-                </div>
-            </div>
+            <ModulePage {pageBoard} {page} active={i===pages.length} on:close={()=>{pop()}}/>
         {/each}
     {/if}
     {#if dialogs && dialogs.length > 0}

@@ -1,0 +1,11 @@
+.app-form {
+
+}
+
+.app-form .tsui-form-field.horizontal label {
+  grid-template-columns: 75px auto;
+}
+
+.app-form .error-message {
+  padding-left: 80px;
+}

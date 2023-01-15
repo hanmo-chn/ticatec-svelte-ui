@@ -52,4 +52,14 @@ export default interface Column {
      * 自动扩充的时候占比重
      */
     weight?:number;
+    /**
+     *
+     */
+    showHint?: boolean;
+
+    /**
+     *
+     * @param data
+     */
+    buildHint?: (data: any) => string;
 }

@@ -56,7 +56,7 @@ export default class TableColumns {
         this.#cellsStyle = [];
         this.#cellsStyle[0]=`.col-0 \n{width: ${this.#fixedColWidth}px}\n`;
         this.#columns.forEach((col, idx) => {
-            this.#cellsStyle[idx+1] = `.col-${idx+1}\n {
+            this.#cellsStyle[idx+1] = `.col-${idx+1} {
                 width: ${col.displayWidth}px;
                 text-align: ${col.align || 'left'};
             }\n`;
@@ -64,22 +64,22 @@ export default class TableColumns {
         this.#cellsStyle[this.#columns.length+1] = `.col-${this.#columns.length+1} \n{width: ${this.#chevronColWidth}px}\n`;
     }
 
-    toInlineStyle():string {
-        let style = `.summary-table-fixed-rows>div, .summary-table-indicator-rows>div {\n
+    toInlineStyle(id: string):string {
+        let style = `#${id} .summary-table-fixed-rows>div, .summary-table-indicator-rows>div {
             height: ${this.#rowHeight}px; 
             line-height: ${this.#rowHeight}px;
-        }\n
+        }
         
-            .summary-table-fixed-rows {
+            #${id} .summary-table-fixed-rows {
                 width: ${this.#fixedColWidth}px;
-            }\n
+            }
             
-            .summary-table-indicator-col {
+            #${id} .summary-table-indicator-col {
                 width: ${this.#chevronColWidth}px;              
-            }\n
+            }
          `;
         this.#cellsStyle.forEach((cellStyle, idx) => {
-            style += cellStyle;
+            style += `#${id} ${cellStyle}`;
         })
         return `<style>${style}</style>`;
     }
@@ -99,6 +99,14 @@ export default class TableColumns {
 
     get headerHeight(): number {
         return this.#headerHeight;
+    }
+
+    get fixedColWidth(): number {
+        return this.#fixedColWidth;
+    }
+
+    get chevronColWidth(): number {
+        return this.#chevronColWidth;
     }
 
 }

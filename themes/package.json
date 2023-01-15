@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass scss -o css --output-style expanded",
-    "scss-prod": "node-sass ticatec-svelte-ui.scss -o build --output-style compressed"
+    "scss-prod": "node-sass ticatec-svelte-ui.scss -o build --output-style compressed",
+    "scss-dev": "node-sass ticatec-svelte-ui.scss -o build --output-style expanded"
   },
   "author": "",
   "license": "ISC",

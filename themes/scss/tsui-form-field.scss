@@ -1,0 +1,58 @@
+.tsui-form-field {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+
+  >label {
+    width: 100%;
+    padding: 4px;
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+  }
+
+  &.vertical {
+    padding: 2em 8px 4px 12px;
+  }
+
+  &.horizontal {
+    padding: 4px 0;
+
+    label {
+      grid-template-columns: 120px auto;
+      align-items: center;
+
+      .field-label {
+        display: inline-block;
+        padding: 0 4px;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: right;
+        text-overflow: ellipsis;
+      }
+
+      .required-indicator {
+        color: #B71C1C;
+      }
+
+      .field {
+        box-sizing: border-box;
+        position: relative;
+      }
+    }
+  }
+
+  .error-message {
+    position: relative;
+    padding: 4px 8px;
+    box-sizing: border-box;
+
+    span {
+      color: #B71C1C;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+  }
+
+}

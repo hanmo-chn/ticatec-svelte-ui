@@ -1,4 +1,3 @@
-import "./ticatec-summary-table.css"
 import TicatecSummaryTable from "./TicatecSummaryTable.svelte";
 import type Column from "./Column";
 import type {CellAlign} from "./CellAlign";

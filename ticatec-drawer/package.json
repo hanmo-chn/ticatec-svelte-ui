@@ -4,6 +4,7 @@
   "description": "",
   "type": "module",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "dev": "vite dev",
     "build": "svelte-kit sync && svelte-package",

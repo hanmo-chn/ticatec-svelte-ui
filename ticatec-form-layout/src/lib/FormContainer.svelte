@@ -1,7 +1,8 @@
 <script lang="ts">
-    import "./tsui-form-layout.scss"
     export let style = '';
+    let className: string = '';
+    export {className as class}
 </script>
-<div class="tsui-form-container" {style}>
+<div class="tsui-form-container {className}" {style}>
     <slot></slot>
 </div>
