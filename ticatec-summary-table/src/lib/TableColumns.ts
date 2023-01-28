@@ -10,16 +10,12 @@ export default class TableColumns {
     #options: TableOptions;
     #rowHeight: number;
     #headerHeight: number;
-    #fixedColWidth: number;
-    #chevronColWidth: number;
 
 
     constructor(columns: Array<Column>, width: number, options: TableOptions) {
         this.#columns = columns;
         this.#rowHeight = options.rowHeight || defaultOptions.rowHeight;
         this.#headerHeight = options.headerHeight || defaultOptions.headerHeight;
-        this.#fixedColWidth = options.fixedColWidth || defaultOptions.fixedColWidth;
-        this.#chevronColWidth = options.chevronColWidth || defaultOptions.chevronColWidth;
         this.#cellsStyle = [];
         this.#width = width;
         this.#options = Object.assign(defaultOptions, options);
@@ -34,7 +30,7 @@ export default class TableColumns {
     }
 
     private adjustTableWidth(): void {
-        let tw: number = this.#fixedColWidth + this.#chevronColWidth;
+        let tw: number = 0;
         let weight: number = 0;
         this.#columns.forEach(col => {
             tw += col.width;
@@ -54,30 +50,16 @@ export default class TableColumns {
 
     private buildCellsStyle() {
         this.#cellsStyle = [];
-        this.#cellsStyle[0]=`.col-0 \n{width: ${this.#fixedColWidth}px}\n`;
         this.#columns.forEach((col, idx) => {
-            this.#cellsStyle[idx+1] = `.col-${idx+1} {
+            this.#cellsStyle[idx+1] = `.col-${idx} {
                 width: ${col.displayWidth}px;
                 text-align: ${col.align || 'left'};
             }\n`;
         })
-        this.#cellsStyle[this.#columns.length+1] = `.col-${this.#columns.length+1} \n{width: ${this.#chevronColWidth}px}\n`;
     }
 
     toInlineStyle(id: string):string {
-        let style = `#${id} .summary-table-fixed-rows>div, .summary-table-indicator-rows>div {
-            height: ${this.#rowHeight}px; 
-            line-height: ${this.#rowHeight}px;
-        }
-        
-            #${id} .summary-table-fixed-rows {
-                width: ${this.#fixedColWidth}px;
-            }
-            
-            #${id} .summary-table-indicator-col {
-                width: ${this.#chevronColWidth}px;              
-            }
-         `;
+        let style = '';
         this.#cellsStyle.forEach((cellStyle, idx) => {
             style += `#${id} ${cellStyle}`;
         })
@@ -99,14 +81,6 @@ export default class TableColumns {
 
     get headerHeight(): number {
         return this.#headerHeight;
-    }
-
-    get fixedColWidth(): number {
-        return this.#fixedColWidth;
-    }
-
-    get chevronColWidth(): number {
-        return this.#chevronColWidth;
     }
 
 }

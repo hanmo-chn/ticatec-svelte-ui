@@ -1,7 +1,7 @@
 <script lang="ts">
     import type Column from "../lib/Column";
     import {CellAlign} from "../lib/CellAlign";
-    import TicatecSummaryTable from "../lib/TicatecSummaryTable.svelte";
+    import TicatecSummaryTable from "../lib/SummaryTable.svelte";
 
     /**
      * 处理姓名单元格的超链接
@@ -16,6 +16,12 @@
     }
 
     let columns: Array<Column> = [
+        {
+            field: '#index',
+            label: '序号',
+            width: 30,
+            align: CellAlign.Center
+        },
         {
             field: 'name',
             label: '姓名',
@@ -82,10 +88,10 @@
         {name: 'Henry Feng', age: 52, gender: 'M', status: 'K', note: '备注'},
         {name: 'Henry Feng', age: 52, gender: 'M', status: 'K', note: '备注'},
         {name: 'Henry Feng', age: 52, gender: 'M', status: 'K', note: '备注'},
-        {name: 'Henry Feng', age: 52, gender: 'M', status: 'K', note: '备注'}
+        {name: 'Henry Feng', age: 52, gender: 'M', status: 'K', note: '备注'}/**/
     ];//];/**/
 </script>
 
 <TicatecSummaryTable style="width: 100%; font-size: 12px" {columns} {list} hasMore={true} on:chevronClick={(e)=>{console.log(e.detail)}} on:loadMore={()=>{console.log('load more data')}}>
-
+    <div slot="topbar">顶部内容</div>
 </TicatecSummaryTable>
